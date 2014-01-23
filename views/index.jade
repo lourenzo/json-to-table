@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1= title
+  if error
+    div.flash-message #{error}
+  form#json-input(method='post')
+    div.form-item: select(name='type', id='type')
+      option URL
+      option(selected='selected') JSON
+    div.form-item#json_text: textarea(name='json_text', cols='80', rows='20')
+    div.form-item#json_url: input(name='json_url', size='112')
+    button(type='submit') View as Table
+  small #{title}

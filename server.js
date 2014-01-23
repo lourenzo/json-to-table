@@ -32,7 +32,7 @@ app.title = 'JSON to Table';
 
 // GET / - shows the FORM
 app.get('/', function (req, res) {
-  res.render('index', { title:  app.title });
+  res.render('form', { title:  app.title });
 });
 
 // POST /
@@ -43,7 +43,7 @@ app.post('/', function (req, res) {
     try {
       json = JSON.parse(req.body.json_text);
     } catch (e) {
-      return res.render('index', {
+      return res.render('form', {
         title: app.title,
         error: 'Invalid JSON'
       });
